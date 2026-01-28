@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Excitement for Chai Culture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, #2c1810, #8b4513, #daa520);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .royal-excitement-section {
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, #2c1810, #8b4513, #daa520);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 550px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .royal-excitement-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(218,165,32,0.1)"/></svg>') repeat;
+            opacity: 0.4;
+            pointer-events: none;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.6; }
+        }
+        .excitement-container {
+            background: linear-gradient(145deg, #f5f5dc, #fff8dc);
+            border: 4px solid #daa520;
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+            z-index: 1;
+            animation: royalFadeIn 1.2s ease-in-out;
+        }
+        @keyframes royalFadeIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); filter: blur(5px); }
+            to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        }
+        .crown {
+            font-size: 2em;
+            color: #daa520;
+            margin-bottom: 10px;
+            animation: crownGlow 2s ease-in-out infinite alternate;
+        }
+        @keyframes crownGlow {
+            from { text-shadow: 0 0 10px #daa520; }
+            to { text-shadow: 0 0 20px #daa520, 0 0 30px #daa520; }
+        }
+        h2 {
+            color: #2c1810;
+            margin-bottom: 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: titleSlide 1.2s ease-out 0.3s both;
+        }
+        @keyframes titleSlide {
+            from { transform: translateX(-30px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        p {
+            color: #5d4e37;
+            margin-bottom: 20px;
+            font-size: 1em;
+            line-height: 1.5;
+            animation: fadeIn 1.2s ease-in-out 0.6s both;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        textarea {
+            width: 80%;
+            height: 120px;
+            border: 3px solid #daa520;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 16px;
+            font-family: 'Playfair Display', serif;
+            resize: none;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s;
+            box-shadow: inset 0 0 10px rgba(218, 165, 32, 0.3);
+            animation: fadeIn 1.2s ease-in-out 0.9s both;
+        }
+        textarea:focus {
+            border-color: #b8860b;
+            outline: none;
+            box-shadow: 0 0 20px rgba(218, 165, 32, 0.5), inset 0 0 10px rgba(218, 165, 32, 0.3);
+        }
+        button {
+            background: linear-gradient(45deg, #daa520, #b8860b);
+            color: #2c1810;
+            border: 3px solid #daa520;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
+            animation: fadeIn 1.2s ease-in-out 1.2s both;
+        }
+        button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(218, 165, 32, 0.6);
+            background: linear-gradient(45deg, #b8860b, #daa520);
+        }
+        .alert {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100%);
+            background: linear-gradient(45deg, #daa520, #b8860b);
+            color: #2c1810;
+            padding: 15px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+            z-index: 1000;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            text-align: center;
+            border: 2px solid #daa520;
+            font-size: 16px;
+        }
+        .alert.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <section class="royal-excitement-section">
+        <div class="excitement-container">
+            <div class="crown">👑</div>
+            <h2>Share Your Excitement</h2>
+            <p>We’re excited to bring Chai Culture to you soon!
+Our tea blends tradition, rich flavors, and a warm community vibe.
+We’d love to hear what you’re most excited about.</p>
+            <textarea id="excitement" placeholder="Write your thoughts and excitement here..."></textarea>
+            <button onclick="shareExcitement()">Share with Us</button>
+        </div>
+        <div id="alert" class="alert">We are profoundly grateful for sharing your excitement! We’ll notify you when Chai Culture launches ☕✨</div>
+    </section>
+
+    <script>
+        function shareExcitement() {
+            const excitement = document.getElementById('excitement').value;
+            if (excitement.trim() !== '') {
+                // Simulate sharing (in a real app, this would send to a server)
+                console.log('Shared excitement:', excitement);
+                
+                // Show thank you alert
+                const alert = document.getElementById('alert');
+                alert.classList.add('show');
+                setTimeout(() => {
+                    alert.classList.remove('show');
+                }, 4000);
+                
+                // Clear textarea
+                document.getElementById('excitement').value = '';
+            } else {
+                alert('Pray, share something before submitting!');
+            }
+        }
+    </script>
+</body>
+</html>
