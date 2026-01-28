@@ -32,9 +32,12 @@ Demonstrates frontend development skills using core web technologies
 
 
 📸 Preview
-<img width="1894" height="895" alt="lunching" src="https://github.com/user-attachments/assets/47202843-ed16-4705-a258-654ade51bab1" />
-<img width="1876" height="913" alt="notify" src="https://github.com/user-attachments/assets/8eab0eff-fec2-4df1-afe4-222355c44c35" />
-<img width="1911" height="904" alt="excitement" src="https://github.com/user-attachments/assets/62e9f7a6-035b-4b6b-b7ec-3a2e2549f9b3" />
+
+Live Demo: https://simranjaiswal801-png.github.io/chai-culture/
+
+<img width="600" height="400" alt="lunching" src="https://github.com/user-attachments/assets/47202843-ed16-4705-a258-654ade51bab1" />
+<img width="600" height="400" alt="notify" src="https://github.com/user-attachments/assets/8eab0eff-fec2-4df1-afe4-222355c44c35" />
+<img width="600" height="400" alt="excitement" src="https://github.com/user-attachments/assets/62e9f7a6-035b-4b6b-b7ec-3a2e2549f9b3" />
 
 
 
